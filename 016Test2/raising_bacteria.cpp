@@ -2,8 +2,8 @@
 using namespace std;
 
 int main() {
-    int x;
-    cin >> x;
+    int n;
+    cin >> n;
 
     int count = 0;
     while (x > 0) {
