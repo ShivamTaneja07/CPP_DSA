@@ -5,39 +5,34 @@ int main() {
     int n;
     cin >> n;
 
-    // Top half
-    for (int i = n; i >= 1; i--) {
-        // Left stars
-        for (int j = 1; j <= i; j++) {
-            cout << "*";
-        }
-        // Middle spaces
-        for (int j = 1; j <= 2 * (n - i); j++) {
-            cout << " ";
-        }
-        // Right stars
-        for (int j = 1; j <= i; j++) {
-            cout << "*";
-        }
-        cout << endl;
-    }
+    for (int i = 1; i <= n; i++) {
+        if (i == 1) {
+            for (int j = 1; j <= 2*n - 1; j++) cout << "*";
+        } else {
+            int stars = n - i + 1;
+            int spaces = 2*i - 3;
 
-    // Bottom half
-    for (int i = 2; i <= n; i++) {
-        // Left stars
-        for (int j = 1; j <= i; j++) {
-            cout << "*";
-        }
-        // Middle spaces
-        for (int j = 1; j <= 2 * (n - i); j++) {
-            cout << " ";
-        }
-        // Right stars
-        for (int j = 1; j <= i; j++) {
-            cout << "*";
-        }
-        cout << endl;
-    }
+            for (int j = 1; j <= stars; j++) cout << "*";
 
-    return 0;
+            for (int j = 1; j <= spaces; j++) cout << " ";
+
+            for (int j = 1; j <= stars; j++) cout << "*";
+        }
+        cout << "\n";
+    }
+    for (int i = n-1; i >= 1; i--) {
+        if (i == 1) {
+            for (int j = 1; j <= 2*n - 1; j++) cout << "*";
+        } else {
+            int stars = n - i + 1;
+            int spaces = 2*i - 3;
+
+            for (int j = 1; j <= stars; j++) cout << "*";
+
+            for (int j = 1; j <= spaces; j++) cout << " ";
+
+            for (int j = 1; j <= stars; j++) cout << "*";
+        }
+        cout << "\n";
+    }
 }
